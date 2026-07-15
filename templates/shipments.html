@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Shipments</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI,sans-serif;
+}
+
+body{
+background:#eef2f7;
+padding:40px;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 5px 20px rgba(0,0,0,.1);
+}
+
+.header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:30px;
+}
+
+h2{
+color:#2563eb;
+}
+
+button{
+background:#2563eb;
+color:white;
+border:none;
+padding:12px 20px;
+border-radius:8px;
+cursor:pointer;
+font-size:15px;
+transition:.3s;
+}
+
+button:hover{
+background:#1d4ed8;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+}
+
+th{
+background:#2563eb;
+color:white;
+padding:14px;
+}
+
+td{
+padding:14px;
+text-align:center;
+border-bottom:1px solid #ddd;
+}
+
+tr:hover{
+background:#f5f8ff;
+}
+
+.edit{
+background:#16a34a;
+}
+
+.delete{
+background:#dc2626;
+}
+
+.edit:hover{
+background:#15803d;
+}
+
+.delete:hover{
+background:#b91c1c;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="header">
+
+<h2>Shipment Management</h2>
+
+<a href="/addShipmentPage">
+<button>+ Add Shipment</button>
+</a>
+
+</div>
+
+<table>
+
+<tr>
+
+<th>ID</th>
+<th>Tracking No</th>
+<th>Customer</th>
+<th>Source</th>
+<th>Destination</th>
+<th>Status</th>
+<th>Weight</th>
+<th>Date</th>
+<th>Actions</th>
+
+</tr>
+
+{{range .}}
+
+<tr>
+
+<td>{{.ShipmentID}}</td>
+<td>{{.TrackingNo}}</td>
+<td>{{.CustomerID}}</td>
+<td>{{.Source}}</td>
+<td>{{.Destination}}</td>
+<td>{{.Status}}</td>
+<td>{{.Weight}}</td>
+<td>{{.ShipmentDate}}</td>
+
+<td>
+
+<a href="/editShipment?id={{.ShipmentID}}">
+<button class="edit">Edit</button>
+</a>
+
+<a href="/deleteShipment?id={{.ShipmentID}}">
+<button class="delete">Delete</button>
+</a>
+
+</td>
+
+</tr>
+
+{{end}}
+
+</table>
+
+</div>
+
+</body>
+</html>

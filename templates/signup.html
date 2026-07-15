@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account | CRM</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Poppins',sans-serif;
+        }
+
+        body{
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            overflow:hidden;
+            background:linear-gradient(-45deg,#6a11cb,#2575fc,#00c9ff,#92fe9d);
+            background-size:400% 400%;
+            animation:bgAnimation 15s ease infinite;
+        }
+
+        @keyframes bgAnimation{
+            0%{background-position:0% 50%;}
+            50%{background-position:100% 50%;}
+            100%{background-position:0% 50%;}
+        }
+
+        .shape{
+            position:absolute;
+            border-radius:50%;
+            background:rgba(255,255,255,.12);
+            animation:float 10s infinite ease-in-out;
+        }
+
+        .shape:nth-child(1){
+            width:220px;
+            height:220px;
+            top:-60px;
+            left:-60px;
+        }
+
+        .shape:nth-child(2){
+            width:160px;
+            height:160px;
+            right:8%;
+            top:12%;
+            animation-duration:8s;
+        }
+
+        .shape:nth-child(3){
+            width:260px;
+            height:260px;
+            bottom:-90px;
+            right:20%;
+            animation-duration:12s;
+        }
+
+        @keyframes float{
+            50%{
+                transform:translateY(-35px) rotate(15deg);
+            }
+        }
+
+        .signup-box{
+            width:420px;
+            padding:40px;
+            border-radius:22px;
+            background:rgba(255,255,255,.15);
+            backdrop-filter:blur(20px);
+            border:1px solid rgba(255,255,255,.25);
+            box-shadow:0 20px 40px rgba(0,0,0,.25);
+            color:#fff;
+            animation:slideUp .8s ease;
+        }
+
+        @keyframes slideUp{
+            from{
+                opacity:0;
+                transform:translateY(50px);
+            }
+            to{
+                opacity:1;
+                transform:translateY(0);
+            }
+        }
+
+        h2{
+            text-align:center;
+            margin-bottom:8px;
+            font-size:30px;
+            font-weight:600;
+        }
+
+        .subtitle{
+            text-align:center;
+            color:#f0f0f0;
+            margin-bottom:30px;
+            font-size:14px;
+        }
+
+        .input-group{
+            margin-bottom:18px;
+        }
+
+        input{
+            width:100%;
+            padding:14px 18px;
+            border:none;
+            border-radius:12px;
+            outline:none;
+            background:rgba(255,255,255,.18);
+            color:#fff;
+            font-size:15px;
+            transition:.3s;
+        }
+
+        input::placeholder{
+            color:#e8e8e8;
+        }
+
+        input:focus{
+            background:rgba(255,255,255,.28);
+            transform:scale(1.03);
+            box-shadow:0 0 15px rgba(255,255,255,.35);
+        }
+
+        button{
+            width:100%;
+            padding:15px;
+            border:none;
+            border-radius:12px;
+            background:linear-gradient(135deg,#00dbde,#00a8ff);
+            color:white;
+            font-size:17px;
+            font-weight:600;
+            cursor:pointer;
+            transition:.35s;
+        }
+
+        button:hover{
+            transform:translateY(-4px);
+            box-shadow:0 12px 25px rgba(0,168,255,.45);
+        }
+
+        button:active{
+            transform:scale(.98);
+        }
+
+        .footer{
+            margin-top:22px;
+            text-align:center;
+            font-size:14px;
+        }
+
+        .footer a{
+            color:#fff;
+            font-weight:600;
+            text-decoration:none;
+        }
+
+        .footer a:hover{
+            text-decoration:underline;
+        }
+
+        @media(max-width:480px){
+
+            .signup-box{
+                width:92%;
+                padding:30px;
+            }
+
+            h2{
+                font-size:26px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="shape"></div>
+<div class="shape"></div>
+<div class="shape"></div>
+
+<div class="signup-box">
+
+    <h2>Create Account</h2>
+    <p class="subtitle">Join our CRM platform and get started</p>
+
+    <form action="/register" method="POST">
+
+        <div class="input-group">
+            <input type="text"
+                   name="fullname"
+                   placeholder="Full Name"
+                   required>
+        </div>
+
+        <div class="input-group">
+            <input type="email"
+                   name="email"
+                   placeholder="Email Address"
+                   required>
+        </div>
+
+        <div class="input-group">
+            <input type="password"
+                   name="password"
+                   placeholder="Password"
+                   required>
+        </div>
+
+        <button type="submit">
+            Create Account
+        </button>
+
+    </form>
+
+    <div class="footer">
+        Already have an account?
+        <a href="/">Sign In</a>
+    </div>
+
+</div>
+
+</body>
+
+</html>

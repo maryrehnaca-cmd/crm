@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Add Shipment</title>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI,sans-serif;
+}
+
+body{
+    background:#eef2f7;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    min-height:100vh;
+    padding:40px 0;
+}
+
+.form-box{
+    background:white;
+    width:650px;
+    padding:45px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,.1);
+    margin:30px 0;
+}
+
+h2{
+
+text-align:center;
+color:#2563eb;
+margin-bottom:25px;
+
+}
+
+label{
+
+font-weight:600;
+
+}
+
+input,select{
+
+width:100%;
+padding:12px;
+margin-top:8px;
+margin-bottom:18px;
+border:1px solid #ccc;
+border-radius:8px;
+font-size:15px;
+
+}
+
+input:focus,
+select:focus{
+
+outline:none;
+border:2px solid #2563eb;
+
+}
+
+button{
+
+width:100%;
+padding:14px;
+background:#2563eb;
+color:white;
+border:none;
+border-radius:8px;
+font-size:16px;
+cursor:pointer;
+transition:.3s;
+
+}
+
+button:hover{
+
+background:#1d4ed8;
+
+}
+
+/* ---------- Attractive Heading ---------- */
+
+.form-header{
+    text-align:center;
+    margin-bottom:35px;
+    border-bottom:2px solid #e5e7eb;
+    padding-bottom:25px;
+}
+
+.icon{
+    width:90px;
+    height:90px;
+    margin:auto;
+    margin-bottom:18px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#2563eb,#0ea5e9);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    font-size:40px;
+    box-shadow:0 10px 25px rgba(37,99,235,.35);
+}
+
+.form-header h1{
+    font-size:34px;
+    color:#2563eb;
+    margin-bottom:8px;
+    font-weight:700;
+}
+
+.form-header p{
+    color:#666;
+    font-size:16px;
+    line-height:1.6;
+}
+
+.back{
+
+display:block;
+text-align:center;
+margin-top:20px;
+text-decoration:none;
+color:#2563eb;
+font-weight:bold;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="form-box">
+
+
+
+<div class="form-header">
+
+    <div class="icon">
+        <i class="fa-solid fa-truck-fast"></i>
+    </div>
+
+    <h1>Create New Shipment</h1>
+
+    <p>
+        Register a new shipment by entering all required logistics details below.
+    </p>
+
+</div>
+
+<form action="/addShipment" method="POST">
+
+<label>Tracking Number</label>
+<input type="text" name="tracking_no" required>
+
+<label>Customer ID</label>
+<input type="number" name="customer_id" required>
+
+<label>Source</label>
+<input type="text" name="source" required>
+
+<label>Destination</label>
+<input type="text" name="destination" required>
+
+<label>Status</label>
+
+<select name="status">
+
+<option>Pending</option>
+<option>In Transit</option>
+<option>Delivered</option>
+
+</select>
+
+<label>Weight (kg)</label>
+<input type="number" step="0.01" name="weight" required>
+
+<label>Shipment Date</label>
+<input type="date" name="shipment_date" required>
+
+<button type="submit">
+Save Shipment
+</button>
+
+</form>
+
+<a href="/shipments" class="back">
+← Back to Shipments
+</a>
+
+</div>
+
+</body>
+</html>

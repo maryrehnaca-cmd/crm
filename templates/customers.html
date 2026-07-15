@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Customers</title>
+
+<style>
+
+body{
+    font-family:Segoe UI;
+    background:#eef2f7;
+    margin:40px;
+}
+
+h1{
+    color:#2563eb;
+    margin-bottom:25px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+th{
+    background:#2563eb;
+    color:white;
+    padding:15px;
+}
+
+td{
+    padding:15px;
+    border-bottom:1px solid #ddd;
+}
+
+tr:hover{
+    background:#f4f7ff;
+}
+
+a.button{
+
+    display:inline-block;
+    margin-bottom:20px;
+    padding:12px 20px;
+    background:#2563eb;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>👥 Customers</h1>
+
+<a class="button" href="/addCustomerPage">
++ Add Customer
+</a>
+
+<table>
+
+<tr>
+
+<th>ID</th>
+<th>Name</th>
+<th>Company</th>
+<th>Phone</th>
+<th>Email</th>
+<th>Address</th>
+
+</tr>
+
+{{range .}}
+
+<tr>
+
+<td>{{.CustomerID}}</td>
+<td>{{.Name}}</td>
+<td>{{.CompanyName}}</td>
+<td>{{.Phone}}</td>
+<td>{{.Email}}</td>
+<td>{{.Address}}</td>
+
+</tr>
+
+{{end}}
+
+</table>
+
+</body>
+</html>

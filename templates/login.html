@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM Login</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Poppins',sans-serif;
+        }
+
+        body{
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            overflow:hidden;
+            background:linear-gradient(-45deg,#1d2671,#c33764,#00c6ff,#0072ff);
+            background-size:400% 400%;
+            animation:gradient 12s ease infinite;
+        }
+
+        @keyframes gradient{
+            0%{background-position:0% 50%;}
+            50%{background-position:100% 50%;}
+            100%{background-position:0% 50%;}
+        }
+
+        .circle{
+            position:absolute;
+            border-radius:50%;
+            background:rgba(255,255,255,.15);
+            animation:float 10s infinite linear;
+        }
+
+        .circle:nth-child(1){
+            width:200px;
+            height:200px;
+            left:5%;
+            top:10%;
+        }
+
+        .circle:nth-child(2){
+            width:120px;
+            height:120px;
+            right:15%;
+            top:15%;
+            animation-duration:8s;
+        }
+
+        .circle:nth-child(3){
+            width:250px;
+            height:250px;
+            bottom:-70px;
+            left:45%;
+            animation-duration:12s;
+        }
+
+        @keyframes float{
+            50%{
+                transform:translateY(-40px);
+            }
+        }
+
+        .login-box{
+            width:380px;
+            padding:45px;
+            border-radius:20px;
+            backdrop-filter:blur(20px);
+            background:rgba(255,255,255,.15);
+            border:1px solid rgba(255,255,255,.25);
+            box-shadow:0 25px 45px rgba(0,0,0,.25);
+            color:white;
+            animation:fadeIn .8s;
+        }
+
+        @keyframes fadeIn{
+            from{
+                opacity:0;
+                transform:translateY(40px);
+            }
+            to{
+                opacity:1;
+                transform:translateY(0);
+            }
+        }
+
+        h2{
+            text-align:center;
+            margin-bottom:8px;
+            font-size:30px;
+        }
+
+        .subtitle{
+            text-align:center;
+            margin-bottom:30px;
+            color:#eee;
+            font-size:14px;
+        }
+
+        .input-group{
+            margin-bottom:20px;
+        }
+
+        input{
+            width:100%;
+            padding:14px 18px;
+            border:none;
+            border-radius:12px;
+            outline:none;
+            background:rgba(255,255,255,.18);
+            color:white;
+            font-size:15px;
+            transition:.3s;
+        }
+
+        input::placeholder{
+            color:#ddd;
+        }
+
+        input:focus{
+            background:rgba(255,255,255,.3);
+            transform:scale(1.03);
+            box-shadow:0 0 20px rgba(255,255,255,.3);
+        }
+
+        button{
+            width:100%;
+            padding:15px;
+            border:none;
+            border-radius:12px;
+            background:#00d4ff;
+            color:white;
+            font-size:17px;
+            font-weight:600;
+            cursor:pointer;
+            transition:.3s;
+        }
+
+        button:hover{
+            transform:translateY(-3px);
+            box-shadow:0 15px 25px rgba(0,212,255,.5);
+            background:#0099ff;
+        }
+
+        .links{
+            text-align:center;
+            margin-top:20px;
+            font-size:14px;
+        }
+
+        .links a{
+            color:#fff;
+            text-decoration:none;
+            font-weight:600;
+        }
+
+        .links a:hover{
+            text-decoration:underline;
+        }
+
+        @media(max-width:500px){
+            .login-box{
+                width:90%;
+                padding:30px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+
+<div class="login-box">
+
+    <h2>Welcome Back</h2>
+    <p class="subtitle">Sign in to your CRM account</p>
+
+    <form action="/login" method="POST">
+
+        <div class="input-group">
+            <input type="email" name="email" placeholder="Email Address" required>
+        </div>
+
+        <div class="input-group">
+            <input type="password" name="password" placeholder="Password" required>
+        </div>
+
+        <button type="submit">Sign In</button>
+
+    </form>
+
+    <div class="links">
+        Don't have an account?
+        <a href="/signup">Create Account</a>
+    </div>
+
+</div>
+
+</body>
+</html>

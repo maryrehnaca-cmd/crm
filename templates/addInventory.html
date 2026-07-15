@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Add Inventory</title>
+
+<style>
+
+body{
+
+background:#eef2f7;
+font-family:Segoe UI;
+
+}
+
+.container{
+
+width:600px;
+margin:40px auto;
+background:white;
+padding:35px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,.1);
+
+}
+
+h1{
+
+text-align:center;
+color:#2563eb;
+margin-bottom:30px;
+
+}
+
+label{
+
+font-weight:bold;
+
+}
+
+input{
+
+width:100%;
+padding:12px;
+margin:10px 0 20px;
+border:1px solid #ccc;
+border-radius:8px;
+
+}
+
+button{
+
+width:100%;
+padding:14px;
+background:#2563eb;
+color:white;
+border:none;
+border-radius:8px;
+font-size:16px;
+cursor:pointer;
+
+}
+
+button:hover{
+
+background:#1d4ed8;
+
+}
+
+.back{
+
+display:block;
+margin-top:20px;
+text-align:center;
+text-decoration:none;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Add Inventory Item</h1>
+
+<form action="/addInventory" method="POST">
+
+<label>Item Name</label>
+<input type="text" name="product_name" required>
+
+
+<label>Quantity</label>
+<input type="number" name="quantity" required>
+
+<label>Warehouse</label>
+<input type="text" name="warehouse" required>
+
+<label>Unit Price (₹)</label>
+<input type="number" step="0.01" name="unit_price" required>
+
+<button type="submit">
+Save Item
+</button>
+
+</form>
+
+<a href="/inventory" class="back">
+← Back to Inventory
+</a>
+
+</div>
+
+</body>
+
+</html>
